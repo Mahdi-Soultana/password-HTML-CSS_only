@@ -123,7 +123,7 @@
  
  input[type="password"]:valid~.alert span {
      border-bottom-color: rgb(30, 255, 0);
-     top: -56%;
+     top: -83%;
      left: 30%;
  }
  
@@ -133,7 +133,7 @@
      }
      input[type="password"]:valid~.alert span {
          border-bottom-color: rgb(30, 255, 0);
-         top: -70%;
+         top: -80%;
      }
  }
  
