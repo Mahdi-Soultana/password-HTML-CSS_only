@@ -87,10 +87,10 @@
      hyphens: auto;
  }
  /* Alert */
+ /* input[type="password"]:invalid~.alert,
+ input[type="password"]:valid~.alert ,*/
  
- input[type="password"]:focus~.alert,
- input[type="password"]:invalid~.alert,
- input[type="password"]:valid~.alert {
+ input[type="password"]:focus~.alert {
      opacity: 1;
      visibility: visible;
      transform: rotateX(0deg);
@@ -117,38 +117,40 @@
      position: absolute;
      border: 20px transparent solid;
      border-bottom-color: red;
-     top: -54%;
+     top: -40%;
      left: 30%;
  }
  
  input[type="password"]:valid~.alert span {
      border-bottom-color: rgb(30, 255, 0);
-     top: -86%;
+     top: -56%;
      left: 30%;
  }
  
- @media (max-width:1300px) {
+ @media (min-width:1300px) {
      .alert span {
-         top: -40%;
-         left: 30%;
+         top: -50%;
      }
      input[type="password"]:valid~.alert span {
          border-bottom-color: rgb(30, 255, 0);
-         top: -40%;
-         left: 30%;
+         top: -70%;
      }
  }
  
  @media (max-width:900px) {
+     input[type="password"] {
+         width: 80vw;
+     }
+     .alert {
+         width: 80vw;
+     }
      .alert span {
-         top: -32%;
-         left: 30%;
+         top: -52%;
      }
  }
  
  @media (max-width:600px) {
      .alert span {
-         top: -26%;
-         left: 30%;
+         top: -36%;
      }
  }
