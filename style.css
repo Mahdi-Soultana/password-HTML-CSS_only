@@ -1,0 +1,154 @@
+ html {
+     font-size: 62.5%;
+ }
+ 
+ body {
+     background-color: #333;
+     height: 70vh;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+ 
+ .df {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     align-content: center;
+     flex-wrap: wrap;
+ }
+ 
+ .baseline {
+     align-items: baseline;
+ }
+ 
+ label {
+     font-size: 3rem;
+     margin: 3vw;
+     color: whitesmoke;
+ }
+ 
+ div {
+     position: relative;
+ }
+ 
+ input[type="password"] {
+     transition: .3s border;
+     width: 30vw;
+     font-size: 3.6rem;
+     outline: none;
+     border: none;
+     border-bottom: solid transparent;
+     background-color: rgba(255, 255, 255, 0.171);
+ }
+ 
+ input[type="password"]:valid {
+     border-bottom-color: rgb(0, 255, 0);
+ }
+ 
+ input[type="password"]:invalid {
+     border-bottom-color: rgba(255, 38, 0, 0.856);
+ }
+ /* Emoji Setup */
+ 
+ span {
+     position: absolute;
+ }
+ 
+ span::before {
+     margin-left: -5rem;
+     font-size: 3.3rem;
+ }
+ 
+ input[type="password"]:invalid~span::before {
+     content: "🤕";
+ }
+ 
+ input[type="password"]:valid~span::before {
+     content: "😍";
+ }
+ 
+ ::placeholder {
+     font-size: 2rem;
+ }
+ 
+ .alert {
+     opacity: 0;
+     visibility: hidden;
+     position: absolute;
+     perspective: 500;
+     transform: rotateX(69deg);
+     transform-origin: top;
+     color: white;
+     width: 30vw;
+     font-size: 2rem;
+     padding: 1rem;
+     margin-top: 2rem;
+     transition: .3s all;
+     word-wrap: break-word;
+     hyphens: auto;
+ }
+ /* Alert */
+ 
+ input[type="password"]:focus~.alert,
+ input[type="password"]:invalid~.alert,
+ input[type="password"]:valid~.alert {
+     opacity: 1;
+     visibility: visible;
+     transform: rotateX(0deg);
+ }
+ 
+ input[type="password"]:invalid~.alert::before {
+     content: "Password Invalid ! Your password must only contain letter and number in all greater then 8 word";
+ }
+ 
+ input[type="password"]:invalid~.alert {
+     background-color: red;
+ }
+ /* Success */
+ 
+ input[type="password"]:valid~.alert::before {
+     content: "Congratulation your Password is Fully Valid !";
+ }
+ 
+ input[type="password"]:valid~.alert {
+     background-color: rgb(30, 255, 0);
+ }
+ 
+ .alert span {
+     position: absolute;
+     border: 20px transparent solid;
+     border-bottom-color: red;
+     top: -54%;
+     left: 30%;
+ }
+ 
+ input[type="password"]:valid~.alert span {
+     border-bottom-color: rgb(30, 255, 0);
+     top: -86%;
+     left: 30%;
+ }
+ 
+ @media (max-width:1300px) {
+     .alert span {
+         top: -40%;
+         left: 30%;
+     }
+     input[type="password"]:valid~.alert span {
+         border-bottom-color: rgb(30, 255, 0);
+         top: -40%;
+         left: 30%;
+     }
+ }
+ 
+ @media (max-width:900px) {
+     .alert span {
+         top: -32%;
+         left: 30%;
+     }
+ }
+ 
+ @media (max-width:600px) {
+     .alert span {
+         top: -26%;
+         left: 30%;
+     }
+ }
